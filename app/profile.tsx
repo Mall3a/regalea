@@ -34,10 +34,14 @@ const giftWishes = [
 ];
 
 export default function Profile() {
-  const [selectedGift, setSelectedGift] = useState(null); // Estado para el regalo seleccionado
+  const [selectedGift, setSelectedGift] = useState(""); // Estado para el regalo seleccionado
 
   // Función para manejar la selección de un regalo
-  const selectGift = (item) => {
+  const selectGift = (item: {
+    name: string;
+    category?: string;
+    image?: string;
+  }) => {
     console.log(selectedGift); // Verifica el estado en la consola
     if (selectedGift) {
       Alert.alert(
